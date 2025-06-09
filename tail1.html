@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Grocery Store</title>
+<link rel="stylesheet" href="tail1.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">GroceryStore</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#about">About</a>
+      <a href="#contact-section">Contact</a> 
+      <a href="#signin">Sign In</a>
+    </nav>
+  </header>
+
+ 
+  <section id="home" class="hero">
+    <div class="content">
+      <h1>Online Grocery Store & Delivery</h1>
+      <h3>Better Products at the Right Price</h3>
+      <p>We are here to save you time and money. Shop smart, eat fresh - every day!</p>
+      <button>ORDER</button>
+    </div>
+    <div class="illustration">
+      <img src="./grocery_image/fruits and veg.jpg">
+    </div>
+  </section>
+
+ 
+  <section id="catalog" class="catalog">
+    <h2>Our Catalog</h2><br><br>
+    <div class="products">
+      <script>
+        const items = [
+          { item_image: "./grocery_image/apple.jpg", item_name: "Apples", current_price: 120, original_price: 150, discount_price: 20 },
+          { item_image: "./grocery_image/bread.jpg", item_name: "Bread", current_price: 50, original_price: 60, discount_price: 15 },
+          { item_image: "./grocery_image/milk.webp", item_name: "Milk", current_price: 40, original_price: 50, discount_price: 20 },
+          { item_image: "./grocery_image/banana.jpg", item_name: "Bananas", current_price: 60, original_price: 80, discount_price: 25 },
+          { item_image: "./grocery_image/tomatoes.jpg", item_name: "Tomatoes", current_price: 30, original_price: 45, discount_price: 33 },
+          { item_image: "./grocery_image/onions.jpg", item_name: "Onions", current_price: 25, original_price: 40, discount_price: 38 },
+          { item_image: "./grocery_image/basmati.jpg", item_name: "Basmati Rice", current_price: 90, original_price: 110, discount_price: 18 },
+          { item_image: "./grocery_image/oil.avif", item_name: "Cooking Oil", current_price: 150, original_price: 180, discount_price: 17 },
+          { item_image: "./grocery_image/eggs.jpg", item_name: "Eggs (12 pack)", current_price: 70, original_price: 85, discount_price: 17 },
+          { item_image: "./grocery_image/chicken.png", item_name: "Chicken Breast", current_price: 220, original_price: 260, discount_price: 15 },
+          { item_image: "./grocery_image/tea powder.jpg", item_name: "Tea Powder", current_price: 85, original_price: 100, discount_price: 15 },
+          { item_image: "./grocery_image/potatoes.webp", item_name: "Potatoes", current_price: 20, original_price: 30, discount_price: 33 },
+        ];
+
+        let itemsContainerElement = document.querySelector(".products");
+        let innerHTML = "";
+
+        items.forEach(item => {
+          innerHTML += `
+            <div class="product">
+              <img class="item-image" src="${item.item_image}" alt="${item.item_name}">
+              <div class="item-name" onclick="toggleTitle(this)">${item.item_name}</div>
+              <div class="price">
+                <span class="current-price">₹${item.current_price}</span><br>
+              </div>
+              <button>Add to Cart</button>
+            </div>
+          `;
+        });
+
+        itemsContainerElement.innerHTML = innerHTML;
+      </script>
+    </div>
+  </section>
+
+ 
+  <div class="delivery-info">
+    <h3>FREE HOME DELIVERY</h3>
+    <p>Kathmandu (Inside Ring Road & 2 km outside Ring Road)</p>
+  </div>
+
+  <div id="about" id="contact-section" class="footer-container"> <!-- Added ID here -->
+    <div class="footer-section">
+      <h3>ABOUT GroceryStore</h3>
+      <p>Since last 25 years we are involved in grocery product. <br> So we insure to deliver the best quality product on time at reasonable price to your doorstep.</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>INFORMATION</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Condition</a></li>
+        <li><a href="#">Return/Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>CUSTOMER SUPPORT</h3>
+      <p>Sunday - Friday (10:00 am - 6:00 pm)</p>
+      <p>Hotline: 01-5355000</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>MY ACCOUNT</h3>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>WHATSAPP & VIBER</h3>
+      <p>9866550000 / 9866551111</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>CONTACT INFORMATION</h3>
+      <p>Teku-12, Kathmandu, Nepal</p>
+      <p>01-5355000 | 9866551111</p>
+      <p>info@rasanmar.com</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2025 Rasanmart. All rights reserved.</p>
+  </div>
+
+  <script src="grocerydata.js"></script>
+</body>
+
+</html>
